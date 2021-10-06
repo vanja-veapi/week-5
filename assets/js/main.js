@@ -115,14 +115,14 @@ $(document).ready(function()
         else if(data.company.substr(0,1) === "@")
         {
             comp = data.company.substr(1);
-            company.href = `www.${comp}.com`;
+            // company.href = `www.${comp}.com`;
             parent = company.parentElement.parentElement;
             parent.classList.remove("disabled");
         }
         else
         {
             comp = data.company;
-            company.href = `www.${comp}.com`;
+            // company.href = `www.${comp}.com`;
             parent = company.parentElement.parentElement;
             parent.classList.remove("disabled");   
         }
