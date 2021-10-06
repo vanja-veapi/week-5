@@ -90,7 +90,8 @@ $(document).ready(function()
     {
         msg.classList.add("invisible");
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        let month = Number(data.created_at.substr(6, 1)) - 1;
+        let month = Number(data.created_at.substr(5, 2)) - 1;
+
         let dateFormat = `${data.created_at.substr(8, 2)} ${months[month]}  ${data.created_at.substr(0, 4)}`;
 
         
