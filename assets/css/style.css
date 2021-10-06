@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    /* Mutual color */
+    --blue: #0079FF;
+    
+    /* Light Mode */
+    --lynch-blue: #697C9A;
+    --kasmhir-blue: #4B6A9B;
+    --lm-black: #2B3442;
+    --zircon: #F6F8FF;
+    --lm-white: #FEFEFE; /* lm -> light mode*/
+
+    /* Dark mode */
+    --dm-white: #ffffff;
+    --dm-black: #141d2f;
+    --cloud-burst: #1E2A47;
+}
+body
+{
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 25px;
+}
+td h4, a
+{
+    color: var(--kasmhir-blue);
+    font-size: 14px;
+}
+a
+{
+    text-decoration: none;
+    word-spacing: 1px;
+    line-height: 22px;
+    font-weight: 400;
+}
+a:hover { text-decoration: revert;}
+h1 { font-size: 38px; } /*Font-size: from 26 to 38px */
+h2 { font-size: 33px; } /*Font-size: from 22 to 33px */
+h3 { font-size: 24px; color: var(--blue); } /*Font-size: from 16 to 24px */
+h4 { font-size: 20px; } /*Font-size: from 13 to 38px */
+h1, h2 { font-weight: 700; }
+h3, h4 { font-weight: 400; }
+
+.mr--16 { margin-right: 16px; }
+.mr--19 {margin-right: 19px;}
+.padding-bottom { padding-bottom: 170px;}
+.container { max-width: 730px; }
+.container--fluid { width: 100%; }
+.container--fluid.bg--primary, .main { min-height: 100vh; }
+.m--auto { margin: 0 auto; }
+.d--flex { display: flex; }
+.justify--content-between { justify-content: space-between; }
+.justify--content-around { justify-content: space-around; }
+.justify--content-center { justify-content: center; }
+.align--items-center { align-items: center; }
+.align--items-baseline { align-items: baseline; }
+.text--uppercase { text-transform: uppercase; }
+.height--1 { height: 50px; }
+.text--white { color: var(--dm-white) !important;}
+.bg--primary { background-color: var(--zircon);}
+.bg--secondary { background-color: var(--cloud-burst) !important;}
+.bg--lm-white { background-color: var(--lm-white); }
+.bg--dm-black { background-color: var(--dm-black); }
+.border--radius { border-radius: 15px; }
+.position--absolute { position: absolute; }
+.position--relative { position: relative; }
+.invisible { visibility: hidden;}
+.change--icon-color { filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(165deg) brightness(102%) contrast(500%); }
+.opacity-75 { opacity: 75%; }
+.disabled 
+{
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+.error
+{
+    color: #F74646;
+    font-size: 15px;
+    right: 136px;
+    top: 22px;
+}
+.btn
+{
+    border: unset;
+    color: var(--dm-white);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    line-height: 23.7px;
+    padding: 13px 23px;
+}
+.btn--primary { background-color: var(--blue);}
+.btn--primary:active { background-color: #60ABFF;}
+.switch h4 
+{ 
+    font-size: 13px; 
+    font-weight: 700;
+    letter-spacing: 2.5px; 
+    color: var(--lynch-blue);
+}
+.hov-white:hover { filter: saturate(1346%) hue-rotate(182deg) brightness(20%) contrast(96%); }
+.hov-black h4 { color: #ffffff; }
+.hov-black:hover { filter: invert(67%) sepia(49%) saturate(260%) hue-rotate(184deg) brightness(89%) contrast(88%);}
+header { padding: 144px 0 36px 0;}
+header h1 
+{
+    font-size: 24px;
+    color: #222731;
+}
+.shadow { box-shadow: 6px 16px 30px rgba(43, 52, 66, 0.1); }
+.input .text
+{
+    border: unset;
+    background-image: url(../images/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 32px 23px;
+    padding: 22px 0 22px 80px;
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    line-height: 25px;
+}
+.input .text:focus-visible { outline: none; }
+.input .btn.position--absolute
+{
+    right: 10px;
+    top: 9px;
+}
+.header h1
+{
+    font-size: 26px;
+    line-height: 39px;
+}
+.data
+{
+    margin-top: 24px;
+    padding: 48px 0;
+}
+.left { margin: 0 37px 0 48px; }
+.left img
+{
+    width: 117px;
+    height: 117px;
+    border-radius: 50%;
+}
+.right { margin-right: 48px;}
+.header h4
+{
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--lynch-blue);
+}
+.name h3 
+{
+    font-size: 16px;
+    line-height: 24px;
+}
+.desc__description 
+{ 
+    max-width: 480px; 
+    margin: 20px 0 32px 0;
+} 
+.desc__description h4
+{
+    font-size: 15px;
+    line-height: 25px;
+    color: var(--kasmhir-blue);
+}
+.statistic
+{
+    border-radius: 10px;
+    padding: 15px 0;
+    margin-bottom: 37px;
+}
+.col-3:last-child { padding-right: 83px; }
+.col-3 h4
+{
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--kasmhir-blue);
+}
+.col-3 h2
+{
+    font-size: 22px;
+    line-height: 33px;
+    color: rgba(43, 52, 66, 1);
+}
+.links { max-width: 429px;}
+input:hover, .switch { cursor: pointer;}
+
+@media screen and (max-width: 768px) 
+{
+    .container { max-width: 573px; }
+    .header
+    {
+        flex-direction: column;
+    }
+    .name h3 
+    {
+        margin: 2px 0 4px 0;
+    }
+    .data
+    {
+        position: relative;
+    }
+    .data .header
+    {
+        position: absolute;
+        top: 60px;
+        left: 205px;
+    }
+    .data.d--flex
+    {
+        display: block;
+    }
+    .right
+    {
+        margin-right: unset;
+        padding: 24px 40px 40px 40px;
+    }
+}
+@media screen and (max-width: 403px) 
+{
+    header { padding-top: 31px; }
+    .input .text 
+    { 
+        font-size: 13px;
+        padding-left: 40px;
+        background-size: 20px 20px;
+        background-position: 16px 26px;
+    }
+    .padding-bottom { padding-bottom: 79px; }
+    .right {padding: unset;}
+    .input .btn.position--absolute
+    {
+        right: 7px;
+    }
+    .btn { padding: 13px 14px;}
+    .data 
+    {
+        padding: 32px 24px 48px 24px;
+        margin-top: 16px;
+    }
+    .container { max-width: 327px; }
+    .left img { width: 70px; height: 70px; }
+    .header h1 
+    { 
+        font-size: 16px;
+    }
+    .header h1, .header h4
+    {
+        line-height: 24px;
+    }
+    .name h3
+    {
+        line-height: 19px;
+        margin: -7px 0 6px 0;
+    }
+    .left { margin: 0 }
+    .name h3, .header h4, .desc__description h4, td h4, a
+    {
+        font-size: 13px;
+    }
+    .data .header
+    {
+        top: 35px;
+        left: 113px;
+    }
+    .links.d--flex { display: block;}
+    .col-3:last-child { padding-right: unset;}
+    .col-3 { text-align: center;}
+    .col-3 h4 { font-size: 11px;}
+    .col-3 h2 { font-size: 16px;}
+}
