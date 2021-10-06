@@ -2,7 +2,6 @@ $(document).ready(function()
 {
     // Toggle
     let switchId = document.querySelector("#switch");
-    let mode = document.querySelector("#mode");
     let switchIcon = document.querySelector("#switch__icon");
     let mutualContainer = document.querySelectorAll(".mutual--container");
     let changeColor = document.querySelectorAll(".change--color");
@@ -28,6 +27,8 @@ $(document).ready(function()
             icons.forEach(ico => {
                 ico.classList.add("change--icon-color");
             })
+            switchId.classList.remove("hov-white");
+            switchId.classList.add("hov-black");
             isToggled = true;
         }
         else
@@ -46,6 +47,8 @@ $(document).ready(function()
             icons.forEach(ico => {
                 ico.classList.remove("change--icon-color");
             })
+            switchId.classList.remove("hov-black");
+            switchId.classList.add("hov-white");
             isToggled = false;
         }
     });
@@ -76,9 +79,10 @@ $(document).ready(function()
     });
 
     //Functions
-    function changeToggleIcon(mode, path)
+    function changeToggleIcon(switcher, path)
     {
-        mode.textContent = mode;
+        let mode = document.querySelector("#mode");
+        mode.textContent = switcher;
         switchIcon.src = `assets/images/${path}`;
         switchIcon.alt = path;
     }
@@ -92,10 +96,8 @@ $(document).ready(function()
         
         let parent;
         let comp; // Company
-        if(data.name === null)
-        {
-            data.name = data.login;
-        }
+        if(data.name === null) { data.name = data.login; }
+
         if(data.bio === null)
         {
             data.bio = "This profile has no bio";
@@ -103,22 +105,6 @@ $(document).ready(function()
         }
         else { description.classList.remove("opacity-75"); }
 
-
-        if(data.twitter_username === null)
-        {
-            data.twitter_username = "Not Available";
-            parent = twitter.parentElement.parentElement;
-            parent.classList.add("disabled");
-        }
-        else 
-        { 
-            twitter.href = data.blog;
-            parent = twitter.parentElement.parentElement;
-            parent.classList.remove("disabled");
-        }
-
-
-        // Company i blog imaju iste zahteve, samo su drugaciji uslovi i data location ima iste uslove samo nema else
         if(data.company === null)
         {
             comp = "Not Available";
@@ -139,31 +125,10 @@ $(document).ready(function()
             parent = company.parentElement.parentElement;
             parent.classList.remove("disabled");   
         }
-
-        if(data.blog === "")
-        {
-            data.blog = "Not Available";
-            parent = site.parentElement.parentElement;
-            parent.classList.add("disabled");
-        }
-        else 
-        { 
-            site.href = data.blog;
-            parent = site.parentElement.parentElement;
-            parent.classList.remove("disabled");
-        }
-
-        if(data.location === null)
-        {
-            data.location = "Not Available";
-            parent = location.parentElement.parentElement;
-            parent.classList.add("disabled");
-        }
-        else
-        {
-            parent = location.parentElement.parentElement;
-            parent.classList.remove("disabled");
-        }
+        ifElseStatement(data.twitter_username, null, twitter, true);
+        ifElseStatement(data.blog, "", site, true);
+        ifElseStatement(data.location, null, location, false);
+       
         avatar.src = data.avatar_url;
         name.textContent = data.name;
         username.textContent = `@${data.login}`;
@@ -171,9 +136,6 @@ $(document).ready(function()
         repos.textContent = data.public_repos;
         followers.textContent = data.followers;
         following.textContent = data.following;
-        location.textContent = data.location;
-        twitter.textContent = data.twitter_username;
-        site.textContent = data.blog;
         company.textContent = comp;
         date.textContent = `Joined ${dateFormat}`;
     }
@@ -193,5 +155,23 @@ $(document).ready(function()
                 msg.classList.remove("invisible");
             }
         });
+    }
+
+    function ifElseStatement(userData, condition, variable, bool = false)
+    {
+        let parent;
+        parent = variable.parentElement.parentElement;
+        if(userData === condition)
+        {
+            userData = "Not Available";
+            parent.classList.add("disabled");
+            return variable.textContent = userData;
+        }
+        else
+        {
+            variable.textContent = userData;
+            parent.classList.remove("disabled");
+        }
+        bool === true ? variable.href = userData : false;
     }
 });

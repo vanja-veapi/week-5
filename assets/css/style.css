@@ -106,6 +106,9 @@ h3, h4 { font-weight: 400; }
     letter-spacing: 2.5px; 
     color: var(--lynch-blue);
 }
+.hov-white:hover { filter: saturate(1346%) hue-rotate(182deg) brightness(20%) contrast(96%); }
+.hov-black h4 { color: #ffffff; }
+.hov-black:hover { filter: invert(67%) sepia(49%) saturate(260%) hue-rotate(184deg) brightness(89%) contrast(88%);}
 header { padding: 144px 0 36px 0;}
 header h1 
 {
