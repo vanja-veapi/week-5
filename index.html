@@ -10,85 +10,85 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="container--fluid bg--primary padding-bottom">
+  <div id="container" class="mutual--container container--fluid bg--primary padding-bottom">
 
     <div class="container main m--auto">
       <!-- Header -->
       <header class="container--fluid d--flex justify--content-between align--items-center">
-        <h1>devfinder</h1>
-        <div id="switch" class="switch d--flex justify--content-between align--items-center">
+        <h1 class="change--color">devfinder</h1>
+        <div id="switch" class="change--color switch d--flex justify--content-between align--items-center">
           <h4 id="mode" class="text--uppercase mr--16">Dark</h4>
-          <img id="mode__icon" src="assets/images/icon-moon.svg" alt="Moon">
+          <img id="switch__icon" src="assets/images/icon-moon.svg" alt="Moon">
         </div>
       </header>
 
       <!-- Input search -->
       <div class="input position--relative">
-        <input id="search" class="text container--fluid border--radius shadow" type="text" placeholder="Search GitHub username..."/>
+        <input id="search" class="block change--color text container--fluid border--radius shadow" type="text" placeholder="Search GitHub username…"/>
         <input id="btn-search" type="button" value="Search" class="btn btn--primary position--absolute border--radius"/>
         <p id="msg" class="error position--absolute invisible">No result</p>
       </div>
 
 
       <!-- Data div-->
-      <div class="data container-fluid bg--lm-white d--flex border--radius shadow">
+      <div class="block data container-fluid bg--lm-white d--flex border--radius shadow">
         <div class="left">
-          <img id="profile" src="https://avatars.githubusercontent.com/u/1876449?v=4" alt="Ovde ide profile picture gith"/>
+          <img id="avatar" src="" alt="Avatar"/>
         </div>
 
         <div class="right container--fluid">
-          <!-- User dataa -->
-          <div class="header d--flex justify--content-between align--items-basline">
+          <!-- User data -->
+          <div class="header d--flex justify--content-between align--items-baseline">
             <div class="name">
-              <h1 id="gh-name">GitHub name</h1>
+              <h1 id="gh-name" class="change--color">GitHub name</h1>
               <h3 id="gh-username">@octotat</h3>
             </div>
-            <h4 id="date">Joined 25 Jan 2011</h4>
+            <h4 id="date" class="change--color">Joined 25 Jan 2011</h4>
           </div>
 
           <!-- @Username and description  -->
           <div class="desc">
             <div class="desc__description mt--20">
-              <h4>This profile has no bio</h4>
+              <h4 id="description" class="change--color">This profile has no bio</h4>
             </div>
           </div>
 
           <div class="footer">
             <!-- Statistic -->
-            <div class="statistic d--flex justify--content-around align--items-center">
+            <div class="mutual--container .bg--primary statistic d--flex justify--content-around align--items-center">
               <div class="col-3">
                 <h4>Repos</h4>
-                <h2>8</h2>
+                <h2 id="repos" class="change--color">8</h2>
               </div>
               <div class="col-3">
                 <h4>Followers</h4>
-                <h2>3938</h2>
+                <h2 id="followers" class="change--color">3938</h2>
               </div>
               <div class="col-3">
                 <h4>Following</h4>
-                <h2>9</h2>
+                <h2 id="following" class="change--color">9</h2>
               </div>
             </div>
             <!-- Links -->
             <div class="links d--flex align--items-center justify--content-between">
               <table>
                 <tr>
-                  <td><img src="assets/images/icon-location.svg" alt="Location" class="mr--19"/></td>
-                  <td><h4 id="location">San Francisco</h4></td>
+                  <td><img src="assets/images/icon-location.svg" alt="Location" class="ico mr--19"/></td>
+                  <td><h4 id="location" class="change--color">San Francisco</h4></td>
                 </tr>
                 <tr>
-                  <td><img src="assets/images/icon-website.svg" alt="Location" class="mr--16"/></td>
-                  <td><a href="#" id="site">www.sajt.com</a></td>
+                  <td><img src="assets/images/icon-website.svg" alt="Location" class="ico mr--16"/></td>
+                  <td><a href="#" id="site" class="change--color">www.sajt.com</a></td>
                 </tr>
               </table>
               <table>
                 <tr>
-                  <td><img src="assets/images/icon-twit.svg" alt="Twitter ico" class="mr--16"/></td>
-                  <td><a href="#" id="twitter">@nezadovoljan</a></td>
+                  <td><img src="assets/images/icon-twit.svg" alt="Twitter ico" class="ico mr--16"/></td>
+                  <td><a href="#" id="twitter" class="change--color">@nezadovoljan</a></td>
                 </tr>
                 <tr>
-                  <td><img src="assets/images/icon-company.svg" alt="Location" class="mr--16"/></td>
-                  <td><a href="#" id="github">@github</a></td>
+                  <td><img src="assets/images/icon-company.svg" alt="gh" class="ico mr--16"/></td>
+                  <td><a href="#" id="company" class="change--color">@github</a></td>
                 </tr>
               </table>
             </div>
@@ -104,5 +104,10 @@
     </div>
 
   </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
