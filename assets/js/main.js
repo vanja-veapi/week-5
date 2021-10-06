@@ -115,18 +115,18 @@ $(document).ready(function()
         else if(data.company.substr(0,1) === "@")
         {
             comp = data.company.substr(1);
-            company.href = data.blog;
+            company.href = `www.${comp}.com`;
             parent = company.parentElement.parentElement;
             parent.classList.remove("disabled");
         }
         else
         {
             comp = data.company;
-            company.href = data.blog;
+            company.href = `www.${comp}.com`;
             parent = company.parentElement.parentElement;
             parent.classList.remove("disabled");   
         }
-        ifElseStatement(data.twitter_username, null, twitter, true);
+        ifElseStatement(data.twitter_username, null, twitter, true, data.twitter_username);
         ifElseStatement(data.blog, "", site, true);
         ifElseStatement(data.location, null, location, false);
        
@@ -158,7 +158,7 @@ $(document).ready(function()
         });
     }
 
-    function ifElseStatement(userData, condition, variable, bool = false)
+    function ifElseStatement(userData, condition, variable, bool = false, twitt)
     {
         let parent;
         parent = variable.parentElement.parentElement;
@@ -173,6 +173,6 @@ $(document).ready(function()
             variable.textContent = userData;
             parent.classList.remove("disabled");
         }
-        bool === true ? variable.href = userData : false;
+        bool === true && userData === twitt ? variable.href = `https://twitter.com/${userData}`  : variable.href = userData;
     }
 });
