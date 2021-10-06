@@ -110,7 +110,12 @@ $(document).ready(function()
             parent = twitter.parentElement.parentElement;
             parent.classList.add("disabled");
         }
-        else { twitter.href = data.blog; }
+        else 
+        { 
+            twitter.href = data.blog;
+            parent = twitter.parentElement.parentElement;
+            parent.classList.remove("disabled");
+        }
 
 
         // Company i blog imaju iste zahteve, samo su drugaciji uslovi i data location ima iste uslove samo nema else
@@ -124,11 +129,15 @@ $(document).ready(function()
         {
             comp = data.company.substr(1);
             company.href = data.blog;
+            parent = company.parentElement.parentElement;
+            parent.classList.remove("disabled");
         }
         else
         {
             comp = data.company;
             company.href = data.blog;
+            parent = company.parentElement.parentElement;
+            parent.classList.remove("disabled");   
         }
 
         if(data.blog === "")
@@ -137,13 +146,23 @@ $(document).ready(function()
             parent = site.parentElement.parentElement;
             parent.classList.add("disabled");
         }
-        else { site.href = data.blog; }
+        else 
+        { 
+            site.href = data.blog;
+            parent = site.parentElement.parentElement;
+            parent.classList.remove("disabled");
+        }
 
         if(data.location === null)
         {
             data.location = "Not Available";
             parent = location.parentElement.parentElement;
             parent.classList.add("disabled");
+        }
+        else
+        {
+            parent = location.parentElement.parentElement;
+            parent.classList.remove("disabled");
         }
         avatar.src = data.avatar_url;
         name.textContent = data.name;
