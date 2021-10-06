@@ -197,6 +197,7 @@ input:hover, .switch { cursor: pointer;}
 
 @media screen and (max-width: 768px) 
 {
+    .pb-144 { padding-bottom: 144px; }
     .container { max-width: 573px; }
     .header
     {
@@ -228,6 +229,7 @@ input:hover, .switch { cursor: pointer;}
 }
 @media screen and (max-width: 403px) 
 {
+    .pb-144 { padding-bottom: 79px; }
     header { padding-top: 31px; }
     .input .text 
     { 

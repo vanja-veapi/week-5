@@ -1,3 +1,5 @@
+var covek = {
+    name: "Vasa"};
 $(document).ready(function()
 {
     // Toggle
